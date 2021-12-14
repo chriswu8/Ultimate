@@ -3,51 +3,99 @@
 
 <head>
     <meta charset="utf-8">
-    <title>My BCIT Project</title>
-    <meta name="comp1800 template" content="my bcit Hiking App project">
+    <title>Main</title>
+    <meta name="Main" content="Home>
 
     <!-- Optional styles and scripts of your own -->
-    <link type="text/css" href="styles/my_style.css">
-    
+    <!-- <link type=" text/css" href="styles/my_style.css"> -->
+
     <!-- Bootstrap FirebaseUI CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    
 
-    
-     <!-- Firebase 8 CDNs-->
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-     </script>
-     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-     
-    
+
+    <!-- Firebase 8 CDNs-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+
     <!-- Link to the api keys for your firebase project -->
-    
+    <script src="./scripts/firebaseAPI.js"></script>
+
+    <style>
+        h1 {
+            padding-bottom: 4rem;
+        }
+
+        .rectangle {
+            padding: 2rem;
+            margin: 1rem;
+            float: right;
+            background-color: lightgreen;
+        }
+    </style>
 
 </head>
 
 <body>
 
-    <!-------------------------------------->
-    <!-- The following is HTML for layout -->
-    <!-------------------------------------->
-    
     <div class="container-fluid bg-dark text-light p-5">
         <div class="container bg-dark p-5">
-            <h1 class="display-4">Elmo's Website</h1>
+            <h1>Vancouver Ultimate</h1>
+            <h4>Welcome back <span id="name-goes-here"></span>!</h4>
             <hr>
-            <p>Welcome ... to the Hiking App!</p>
+            <h6>Quote of the day: <span id="quote-goes-here"></span></h6>
         </div>
     </div>
+
+    <div>
+        <div class="rectangle"> <h4>Find a team &nbsp; &nbsp; &nbsp; </h4></div> <br>
+        <div class="rectangle"> <h4>Attend a practice &nbsp; &nbsp; &nbsp; </h4></div> <br>
+        <div class="rectangle"> <h4>Get your merch &nbsp; &nbsp; &nbsp; </h4></div> <br>
+        <div class="rectangle"> <h4>Host a game &nbsp; &nbsp; &nbsp; </h4></div> <br>
+    </div>
+
+
+
+    <br> <br> <br> <br> <br> <br> <br>
 
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
-    
+    <script>
+        function read_display_quote() {
+            db
+                .collection("quotes")
+                .doc("monday")
+                .onSnapshot(mondayDoc => { document.getElementById("quote-goes-here").innerText = mondayDoc.data().quote; })
+        }
+
+        read_display_quote();
+    </script>
+
+    <script>
+        //function to insert name of the user for a greeting message
+        function read_display_name() {
+            firebase.auth().onAuthStateChanged(user => {
+                // Check if user is signed in:
+                if (user) {
+                    //go to the correct user document by referencing to the user uid
+                    thisUser = db.collection("users").doc(user.uid);
+                    //get the document for current user.
+                    thisUser.get()
+                        .then(userDoc => { document.getElementById("name-goes-here").innerText = userDoc.data().name; })
+                }
+            });
+        }
+        read_display_name();
+    </script>
+
+
 </body>
 
 </html>
