@@ -48,6 +48,16 @@
             padding: 0.5rem;
         }
     </style>
+
+    <style>
+        h1 {
+            padding-bottom: 2rem;
+        }
+
+        .icon-label {
+            font-size: 7px;
+        }
+    </style>
 </head>
 
 <body>
@@ -56,10 +66,10 @@
     <!-- Your own HTML layout goes here -->
     <!------------------------------------>
 
-    <div id="heading">
-        <span class="brandName">
-            <h1> Vancouver Ultimate </h1>
-        </span>
+    <div class="container-fluid bg-dark text-light p-3">
+        <div class="container bg-dark">
+            <h1>Vancouver Ultimate</h1>
+        </div>
     </div>
 
 
@@ -103,26 +113,13 @@
     <br><br><br>
 
     <footer class="navbar justify-content-evenly fixed-bottom bg-warning">
-        <a href="../1. Home/main.html">
-            <i class="material-icons">home</i>
-            <p>Home</p>
-        </a>
-        <a href="../2. Fields/cityList.html">
-            <i class="material-icons">place</i>
-            <p>Fields</p>
-        </a>
-        <a href="../3. Theory/categories.html">
-            <i class="material-icons"><span class="material-icons-two-tone"> article</span> </i>
-            <p>Theory</p>
-        </a>
-        <a href="../4. Profile/profile.html">
-            <i class="material-icons">person</i>
-            <p>Profile</p>
-        </a>
+
+        <i class="material-icons" onclick="toHome()">home <div class="icon-label">HOME</div></i>
+        <i class="material-icons" onclick="toFields()">place <div class="icon-label">FIELDS</div></i>
+        <i class="material-icons" onclick="toTheory()">article <div class="icon-label">THEORY</div></i>
+        <i class="material-icons" onclick="toProfile()">person <div class="icon-label">PROFILE</div></i>
+
     </footer>
-
-
-
 
 
     <!--------------------------------------------------->
@@ -154,6 +151,12 @@
         writeFields();
     </script>
 
+    <script>
+        function toHome() { window.location.href = "../1. Home/home.html"; }
+        function toFields() { window.location.href = "../2. Fields/cityList.html"; }
+        function toTheory() { window.location.href = "../3. Theory/categories.html"; }
+        function toProfile() { window.location.href = "../4. Profile/profile.html"; }
+    </script>
 </body>
 
 </html>

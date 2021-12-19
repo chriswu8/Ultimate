@@ -63,10 +63,10 @@
 
     <footer class="navbar justify-content-evenly fixed-bottom bg-warning">
 
-        <i class="material-icons">home <div class="icon-label">HOME</div></i>
-        <i class="material-icons">place <div class="icon-label">FIELDS</div></i>
-        <i class="material-icons">article <div class="icon-label">THEORY</div></i>
-        <i class="material-icons">person <div class="icon-label">PROFILE</div></i>
+        <i class="material-icons" onclick="toHome()">home <div class="icon-label">HOME</div></i>
+        <i class="material-icons" onclick="toFields()">place <div class="icon-label">FIELDS</div></i>
+        <i class="material-icons" onclick="toTheory()">article <div class="icon-label">THEORY</div></i>
+        <i class="material-icons" onclick="toProfile()">person <div class="icon-label">PROFILE</div></i>
 
     </footer>
 
@@ -100,6 +100,14 @@
         }
         read_display_name();
     </script>
+
+    <script>
+        function toHome() { window.location.href = "../1. Home/home.html"; }
+        function toFields() { window.location.href = "../2. Fields/cityList.html"; }
+        function toTheory() { window.location.href = "../3. Theory/categories.html"; }
+        function toProfile() { window.location.href = "../4. Profile/profile.html"; }
+    </script>
+
 
 
 </body>
