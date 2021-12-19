@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Richmond</title>
+
+    <meta name="Richmond" content="Richmond">
+
+    <!--Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Google Icons (Material Design)-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Firebase 8 CDNs-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+
+    <!-- Link to the api keys for your firebase project -->
+    <script src="./scripts/firebaseAPI.js"></script>
+
+    <style>
+        html {
+            padding: 0px;
+            margin: 0px;
+            background-color: rgb(190, 190, 190);
+        }
+
+        body {
+            background-color: rgb(190, 190, 190);
+        }
+
+        button {
+            margin: 0.75rem;
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!------------------------------------>
+    <!-- Your own HTML layout goes here -->
+    <!------------------------------------>
+
+    <div id="heading">
+        <span class="brandName">
+            <h1> Vancouver Ultimate </h1>
+        </span>
+    </div>
+
+
+    <div class="container">
+        <div class="card-group">
+
+            <div class="card" style="width: 18rem;">
+                <img src="./images/..." class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title" id="..">Hike name</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                    </p>
+                    <a href="#" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="./images/..." class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title" id="...">Hike name</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                    </p>
+                    <a href="#" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="./images/..." class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title" id="...">Hike name</h5>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                    </p>
+                    <a href="#" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <br><br><br>
+
+    <footer class="navbar justify-content-evenly fixed-bottom bg-warning">
+        <a href="../1. Home/main.html">
+            <i class="material-icons">home</i>
+            <p>Home</p>
+        </a>
+        <a href="../2. Fields/cityList.html">
+            <i class="material-icons">place</i>
+            <p>Fields</p>
+        </a>
+        <a href="../3. Theory/categories.html">
+            <i class="material-icons"><span class="material-icons-two-tone"> article</span> </i>
+            <p>Theory</p>
+        </a>
+        <a href="../4. Profile/profile.html">
+            <i class="material-icons">person</i>
+            <p>Profile</p>
+        </a>
+    </footer>
+
+
+
+
+
+    <!--------------------------------------------------->
+    <!-- Your Javascript Libraries and scripts go here -->
+    <!--------------------------------------------------->
+    <script>
+        function writeFields() {
+            // a variable for the collection you want to create in Firestore (to populate data)
+            var fields = db.collection("fields");
+
+            fields.add({
+                name: "Minoru Park",
+                address: "7191 Granville Ave",
+                type: "grass"
+
+            });
+            fields.add({
+                name: "Brighouse Park",
+                address: "7840 Granville Ave",
+                type: "grass"
+            });
+            fields.add({
+                name: "Richmond High Arificial Turf",
+                address: " 7840 Granville Ave",
+                type: "turf"
+            });
+        }
+
+        writeFields();
+    </script>
+
+</body>
+
+</html>
