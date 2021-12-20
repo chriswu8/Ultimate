@@ -1,12 +1,14 @@
+<!--https://www.burnaby.ca/recreation-and-arts/recreation-facilities/sports-fields/sports-field-status-->
+
 <!DOCTYPE html>
 <html>
 
 <head>
 
     <meta charset="utf-8">
-    <title>Profile</title>
+    <title>Burnaby</title>
 
-    <meta name="Profile" content="Profile">
+    <meta name="Burnaby" content="Burnaby">
 
     <!--Required meta tags-->
     <meta charset="utf-8">
@@ -56,39 +58,12 @@
 
         .icon-label {
             font-size: 7px;
+        } 
+
+        h2 {
+            text-align: center;
         }
     </style>
-
-    <style>
-        .accordion {
-            background-color: rgb(165, 240, 158);
-            border-radius: 10px;
-            color: #444;
-            cursor: pointer;
-            padding: 18px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 15px;
-        }
-
-        .active,
-        .accordion:hover {
-            background-color: #ffc107;
-            border-radius: 10px;
-        }
-
-        .panel {
-            padding-left: 18px;
-            width: 100%;
-            display: none;
-            background-color: rgb(108, 247, 247);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-    </style>
-
 </head>
 
 <body>
@@ -103,52 +78,44 @@
         </div>
     </div>
 
-    <h2>Personal Information</h2>
+    <h2 class>Burnaby</h2>
 
-    <button class="accordion">Member Info</button>
-    <div class="panel">
-        <p>Name: </p>
-        <p>Gender: </p>
-        <p>Alias: </p>
-        <p>Joined: </p>
-        <p>Membership: </p>
+    <div class="container">
+        <div class="card-group">
+
+            <div class="card" style="width: 18rem;">
+                <img src="../images/dummyImage.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title" id="..">Confederation Park Soccer Field</h5>
+                    <p class="card-text">Located in north Burnaby, this busy park can accommodate a wide range of activities
+                    </p>
+                    <a href="#" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="../images/dummyImage.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title" id="...">Burnaby Lake Sports Complex West</h5>
+                    <p class="card-text">Extending across both sides of Kensington Ave, the Burnaby Lake Sport Complex (East and West) is home to artificial and grass fields that accommodate various outdoor sports activities.
+                    </p>
+                    <a href="#" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="../images/dummyImage.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title" id="...">Burnaby North Secondary School</h5>
+                    <p class="card-text">Burnaby North Secondary School is nestled in Kensington Park, providing room for the school's ice rink, 18 hole pitch and putt golfing centre, outdoor swimming pool, 3 tennis courts, 4 baseball diamonds, softball diamond, an artificial turf field, 6 lane 400 metre concrete track and field tracks, and 2 outdoor natural grass fields.
+                    </p>
+                    <a href="#" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+
+        </div>
     </div>
 
-    <button class="accordion">Contact Info</button>
-    <div class="panel">
-        <p>Primary Phone: </p>
-        <p>Alternate Phone: </p>
-        <p>Home Address: </p>
-    </div>
-
-    <button class="accordion">Player Info</button>
-    <div class="panel">
-        <p>Player Consent: </p>
-        <p>Birthdate </p>
-        <p>Prior Experience: </p>
-        <p>Game Matching Gender: </p>
-        <p>Skill Level: </p>
-      
-    </div>
-
-
-    <button class="accordion">Emergency & Medical Info</button>
-    <div class="panel">
-        <p>Emergency Contact Name:</p>
-        <p>Emergency Contact Phone Number:</p>
-        <p>Doctor's Name:</p>
-        <p>Doctor's Phone Number:</p>
-        <p>Allergies: </p>
-        <p>Relevant Medications: </p>
-        <p>Relevant Medications: </p>
-    </div>
-
-    <button class="accordion">Settings</button>
-    <div class="panel">
-        <p>Subscriptions: </p>
-        <p>Contact Options:</p>
-        <p>Timezone:</p>
-    </div>
 
     <br><br><br>
 
@@ -165,29 +132,31 @@
     <!--------------------------------------------------->
     <!-- Your Javascript Libraries and scripts go here -->
     <!--------------------------------------------------->
-
-
     <script>
-        var acc = document.getElementsByClassName("accordion");
-        var i;
+        function writeFields() {
+            // a variable for the collection you want to create in Firestore (to populate data)
+            var fields = db.collection("fields");
 
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
-                } else {
-                    panel.style.display = "block";
-                }
+            fields.add({
+                name: "Minoru Park",
+                address: "7191 Granville Ave",
+                type: "grass"
+
+            });
+            fields.add({
+                name: "Brighouse Park",
+                address: "7840 Granville Ave",
+                type: "grass"
+            });
+            fields.add({
+                name: "Richmond High Arificial Turf",
+                address: " 7840 Granville Ave",
+                type: "turf"
             });
         }
+
+        writeFields();
     </script>
-
-
-
-
-
 
     <script>
         function toHome() { window.location.href = "../1. Home/home.html"; }
@@ -195,9 +164,6 @@
         function toTheory() { window.location.href = "../3. Theory/categories.html"; }
         function toProfile() { window.location.href = "../4. Profile/profile.html"; }
     </script>
-
-
-
 </body>
 
 </html>
