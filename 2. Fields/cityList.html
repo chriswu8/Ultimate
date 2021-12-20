@@ -86,23 +86,23 @@
         </div>
 
         <div>
-            <button>
+            <button id="burnabyButton">
                 <h3> <b> Burnaby </b> </h3>
             </button>
             <br>
-            <button>
+            <button id="newWestminsterButton">
                 <h3> <b> New Westminster </b> </h3>
             </button>
             <br>
-            <button>
+            <button id="richmondButton">
                 <h3> <b> Richmond </b> </h3>
             </button>
             <br>
-            <button>
+            <button id="surreyButton">
                 <h3> <b> Surrey </b> </h3>
             </button>
             <br>
-            <button>
+            <button id="vancouverButton">
                 <h3> <b> Vancouver </b> </h3>
             </button>
             <br>
@@ -169,6 +169,24 @@
         function toFields() { window.location.href = "../2. Fields/cityList.html"; }
         function toTheory() { window.location.href = "../3. Theory/categories.html"; }
         function toProfile() { window.location.href = "../4. Profile/profile.html"; }
+    </script>
+
+    <script> 
+    document.getElementById("burnabyButton").onclick = function () {
+        window.location.href = "burnaby.html";
+    };
+    document.getElementById("newWestminsterButton").onclick = function () {
+        window.location.href = "newWestminster.html";
+    };
+    document.getElementById("richmondButton").onclick = function () {
+        window.location.href = "richmond.html";
+    };
+    document.getElementById("surreyButton").onclick = function () {
+        window.location.href = "surrey.html";
+    };
+    document.getElementById("vancouverButton").onclick = function () {
+        window.location.href = "vancouver.html";
+    };
     </script>
 
 </body>
