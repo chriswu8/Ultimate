@@ -58,7 +58,7 @@
 
         .icon-label {
             font-size: 7px;
-        } 
+        }
 
         h2 {
             text-align: center;
@@ -87,7 +87,8 @@
                 <img src="../images/dummyImage.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title" id="..">Confederation Park Soccer Field</h5>
-                    <p class="card-text">Located in north Burnaby, this busy park can accommodate a wide range of activities
+                    <p class="card-text">Located in north Burnaby, this busy park can accommodate a wide range of
+                        activities
                     </p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
@@ -97,7 +98,9 @@
                 <img src="../images/dummyImage.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title" id="...">Burnaby Lake Sports Complex West</h5>
-                    <p class="card-text">Extending across both sides of Kensington Ave, the Burnaby Lake Sport Complex (East and West) is home to artificial and grass fields that accommodate various outdoor sports activities.
+                    <p class="card-text">Extending across both sides of Kensington Ave, the Burnaby Lake Sport Complex
+                        (East and West) is home to artificial and grass fields that accommodate various outdoor sports
+                        activities.
                     </p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
@@ -107,7 +110,10 @@
                 <img src="../images/dummyImage.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title" id="...">Burnaby North Secondary School</h5>
-                    <p class="card-text">Burnaby North Secondary School is nestled in Kensington Park, providing room for the school's ice rink, 18 hole pitch and putt golfing centre, outdoor swimming pool, 3 tennis courts, 4 baseball diamonds, softball diamond, an artificial turf field, 6 lane 400 metre concrete track and field tracks, and 2 outdoor natural grass fields.
+                    <p class="card-text">Burnaby North Secondary School is nestled in Kensington Park, providing room
+                        for the school's ice rink, 18 hole pitch and putt golfing centre, outdoor swimming pool, 3
+                        tennis courts, 4 baseball diamonds, softball diamond, an artificial turf field, 6 lane 400 metre
+                        concrete track and field tracks, and 2 outdoor natural grass fields.
                     </p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
@@ -132,31 +138,32 @@
     <!--------------------------------------------------->
     <!-- Your Javascript Libraries and scripts go here -->
     <!--------------------------------------------------->
-    <script>
-        function writeFields() {
-            // a variable for the collection you want to create in Firestore (to populate data)
-            var fields = db.collection("fields");
 
-            fields.add({
-                name: "Minoru Park",
-                address: "7191 Granville Ave",
-                type: "grass"
+    <!-- DO NOT DELETE THIS COMMENTED SECTION-->
+    
+    <!-- <script>
+        // Add a "fields" collection which has a "Burnaby" document which has a "Confederation Park" collection which has corresponding data values
+        db.collection("fields").doc("Burnaby").collection("Confederation Park").add({
+            name: "Confederation Park Soccer Field",
+            address: "204 Alpha Ave, Burnaby, BC V5C 5J9",
+            type: "grass"
+        })
 
-            });
-            fields.add({
-                name: "Brighouse Park",
-                address: "7840 Granville Ave",
-                type: "grass"
-            });
-            fields.add({
-                name: "Richmond High Arificial Turf",
-                address: " 7840 Granville Ave",
-                type: "turf"
-            });
-        }
+        // Add a "fields" collection which has a "Burnaby" document which has a "Burnaby Lake Sports Complex West" collection which has corresponding data values
+        db.collection("fields").doc("Burnaby").collection("Burnaby Lake Sports Complex West").add({
+            name: "Burnaby Lake Sports Complex West",
+            address: "3677 Kensington Ave, Burnaby, BC V5B 4Z6",
+            type: "turf"
+        })
 
-        writeFields();
-    </script>
+        // Add a "fields" collection which has a "Burnaby" document which has a "Burnaby North" collection which has corresponding data values
+        db.collection("fields").doc("Burnaby").collection("Burnaby North").add({
+            name: "Burnaby North Secondary School",
+            address: "751 Hammarskjold Dr, Burnaby, BC V5B 4A1",
+            type: "turf"
+        })
+    </script> -->
+
 
     <script>
         function toHome() { window.location.href = "../1. Home/home.html"; }

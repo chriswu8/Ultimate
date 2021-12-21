@@ -59,7 +59,7 @@
 
         .icon-label {
             font-size: 7px;
-        } 
+        }
 
         h2 {
             text-align: center;
@@ -88,7 +88,9 @@
                 <img src="../images/dummyImage.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title" id="..">Newton Athletic Park</h5>
-                    <p class="card-text">Newton Athletic Park is a premiere destination sporting and athletic park in the lower mainland. The park covers 22 hectares and offers a wide range of active sporting facilities and amenities.
+                    <p class="card-text">Newton Athletic Park is a premiere destination sporting and athletic park in
+                        the lower mainland. The park covers 22 hectares and offers a wide range of active sporting
+                        facilities and amenities.
                     </p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
@@ -98,7 +100,8 @@
                 <img src="../images/dummyImage.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title" id="...">Serpentine Heights Park</h5>
-                    <p class="card-text">Serpentine Heights Park is located next to Serpentine Heights Elementary. The park features a baseball diamond, soccer field and a natural wooded area with walking trails.
+                    <p class="card-text">Serpentine Heights Park is located next to Serpentine Heights Elementary. The
+                        park features a baseball diamond, soccer field and a natural wooded area with walking trails.
                     </p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
@@ -108,7 +111,8 @@
                 <img src="../images/dummyImage.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title" id="...">South Surrey Athletic Park</h5>
-                    <p class="card-text">South Surrey Athletic Park is a large athletic park with fun options for kids, youth and families.
+                    <p class="card-text">South Surrey Athletic Park is a large athletic park with fun options for kids,
+                        youth and families.
                     </p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
@@ -133,31 +137,31 @@
     <!--------------------------------------------------->
     <!-- Your Javascript Libraries and scripts go here -->
     <!--------------------------------------------------->
-    <script>
-        function writeFields() {
-            // a variable for the collection you want to create in Firestore (to populate data)
-            var fields = db.collection("fields");
 
-            fields.add({
-                name: "Minoru Park",
-                address: "7191 Granville Ave",
-                type: "grass"
+    <!-- DO NOT DELETE THIS COMMENTED SECTION-->
+    
+    <!-- <script>
+        // Add a "fields" collection which has a "Surrey" document which has a "Newton Athletic Park" collection which has corresponding data values
+        db.collection("fields").doc("Surrey").collection("Newton Athletic Park").add({
+            name: "Newton Athletic Park",
+            address: "7395 128 St, Surrey, BC V3W 2M7",
+            type: "turf"
+        })
 
-            });
-            fields.add({
-                name: "Brighouse Park",
-                address: "7840 Granville Ave",
-                type: "grass"
-            });
-            fields.add({
-                name: "Richmond High Arificial Turf",
-                address: " 7840 Granville Ave",
-                type: "turf"
-            });
-        }
+        // Add a "fields" collection which has a "Surrey" document which has a "Serpentine Heights Park" collection which has corresponding data values
+        db.collection("fields").doc("Surrey").collection("Serpentine Heights Park").add({
+            name: "Serpentine Heights Park",
+            address: "16151 92 Ave, Surrey, BC V4N 3E1",
+            type: "grass"
+        })
 
-        writeFields();
-    </script>
+        // Add a "fields" collection which has a "Surrey" document which has a "South Surrey Athletic Park" collection which has corresponding data values
+        db.collection("fields").doc("Surrey").collection("South Surrey Athletic Park").add({
+            name: "South Surrey Athletic Park",
+            address: "14600 20 Ave, Surrey, BC V4A 2C8",
+            type: "turf"
+        })
+    </script> -->
 
     <script>
         function toHome() { window.location.href = "../1. Home/home.html"; }

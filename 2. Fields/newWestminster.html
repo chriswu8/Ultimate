@@ -59,7 +59,7 @@
 
         .icon-label {
             font-size: 7px;
-        } 
+        }
 
         h2 {
             text-align: center;
@@ -88,7 +88,8 @@
                 <img src="../images/dummyImage.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title" id="..">Mercer Stadium</h5>
-                    <p class="card-text">Mercer Stadium is a 0.3 mile (500-step) route located near New Westminster, British Columbia, Canada
+                    <p class="card-text">Mercer Stadium is a 0.3 mile (500-step) route located near New Westminster,
+                        British Columbia, Canada
                     </p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
@@ -98,7 +99,8 @@
                 <img src="../images/dummyImage.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title" id="...">Moody Park</h5>
-                    <p class="card-text">City green space offering a pool, a dog park, athletic fields & courts, a playground & lawn bowling.
+                    <p class="card-text">City green space offering a pool, a dog park, athletic fields & courts, a
+                        playground & lawn bowling.
                     </p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
@@ -108,7 +110,10 @@
                 <img src="../images/dummyImage.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title" id="...">Queen's Park</h5>
-                    <p class="card-text">Queen's Park is a recreation and tourist attraction in New Westminster. This grass field is located south of the ball stadium and tennis courts, between ball diamonds #2 and #3. Parking can be found between the stadium and tennis courts or between the stadium and the arena.
+                    <p class="card-text">Queen's Park is a recreation and tourist attraction in New Westminster. This
+                        grass field is located south of the ball stadium and tennis courts, between ball diamonds #2 and
+                        #3. Parking can be found between the stadium and tennis courts or between the stadium and the
+                        arena.
                     </p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
@@ -133,31 +138,32 @@
     <!--------------------------------------------------->
     <!-- Your Javascript Libraries and scripts go here -->
     <!--------------------------------------------------->
-    <script>
-        function writeFields() {
-            // a variable for the collection you want to create in Firestore (to populate data)
-            var fields = db.collection("fields");
 
-            fields.add({
-                name: "Minoru Park",
-                address: "7191 Granville Ave",
-                type: "grass"
+    
+    <!-- DO NOT DELETE THIS COMMENTED SECTION-->
 
-            });
-            fields.add({
-                name: "Brighouse Park",
-                address: "7840 Granville Ave",
-                type: "grass"
-            });
-            fields.add({
-                name: "Richmond High Arificial Turf",
-                address: " 7840 Granville Ave",
+    <!-- <script>
+        // Add a "fields" collection which has a "New Westminster" document which has a "Mercer Stadium" collection which has corresponding data values
+        db.collection("fields").doc("New Westminster").collection("Mercer Stadium").add({
+            name: "Mercer Stadium",
+                address: "900 6th St, New Westminster, BC V3L 3C8",
                 type: "turf"
-            });
-        }
+        })
 
-        writeFields();
-    </script>
+        // Add a "fields" collection which has a "New Westminster" document which has a "Moody Park" collection which has corresponding data values
+        db.collection("fields").doc("New Westminster").collection("Moody Park").add({
+            name: "Moody Park",
+                address: "600 Eighth St, New Westminster, BC V3M 3S2",
+                type: "grass"
+        })
+
+        // Add a "fields" collection which has a "New Westminster" document which has a "Queen's Park" collection which has corresponding data values
+        db.collection("fields").doc("New Westminster").collection("Queen's Park").add({
+            name: "Queen's Park",
+                address: "3rd Ave, New Westminster, BC V3M 1V2",
+                type: "turf"
+        })
+    </script> -->
 
     <script>
         function toHome() { window.location.href = "../1. Home/home.html"; }

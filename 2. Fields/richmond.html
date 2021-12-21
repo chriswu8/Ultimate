@@ -57,7 +57,7 @@
 
         .icon-label {
             font-size: 7px;
-        } 
+        }
 
         h2 {
             text-align: center;
@@ -86,7 +86,9 @@
                 <img src="../images/dummyImage.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title" id="..">Minoru Park</h5>
-                    <p class="card-text">Minoru Park is a park located on the site of a former horse-racing track and airstrip in Richmond, British Columbia. The park's running track is often used by School District 38 Richmond for school competitions, such as track and field.
+                    <p class="card-text">Minoru Park is a park located on the site of a former horse-racing track and
+                        airstrip in Richmond, British Columbia. The park's running track is often used by School
+                        District 38 Richmond for school competitions, such as track and field.
                     </p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
@@ -96,7 +98,10 @@
                 <img src="../images/dummyImage.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title" id="...">Brighouse Park</h5>
-                    <p class="card-text">Brighouse Park is a 7.8 acres sports oriented park located in the busy City Centre. It has 2 sports fields, 1 ball diamond, a lacrosse box and 2 areas of spectator bleachers. The park is landscaped with seasonal flower beds and bike racks are available near the parking lot for bike lock-up/storage.
+                    <p class="card-text">Brighouse Park is a 7.8 acres sports oriented park located in the busy City
+                        Centre. It has 2 sports fields, 1 ball diamond, a lacrosse box and 2 areas of spectator
+                        bleachers. The park is landscaped with seasonal flower beds and bike racks are available near
+                        the parking lot for bike lock-up/storage.
                     </p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
@@ -106,7 +111,9 @@
                 <img src="../images/dummyImage.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title" id="...">Thompson / Burnett Community Park</h5>
-                    <p class="card-text">Thompson/Burnett Community Park has a total park size of 27.199 acres in the Thompson area and is a sports oriented park with 3 sports field, a ball diamond, 2 basketball courts, 4 tennis courts, lacrosse box, and disc golf.
+                    <p class="card-text">Thompson/Burnett Community Park has a total park size of 27.199 acres in the
+                        Thompson area and is a sports oriented park with 3 sports field, a ball diamond, 2 basketball
+                        courts, 4 tennis courts, lacrosse box, and disc golf.
                     </p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
@@ -131,31 +138,32 @@
     <!--------------------------------------------------->
     <!-- Your Javascript Libraries and scripts go here -->
     <!--------------------------------------------------->
-    <script>
-        function writeFields() {
-            // a variable for the collection you want to create in Firestore (to populate data)
-            var fields = db.collection("fields");
 
-            fields.add({
-                name: "Minoru Park",
-                address: "7191 Granville Ave",
-                type: "grass"
+    <!-- DO NOT DELETE THIS COMMENTED SECTION-->
 
-            });
-            fields.add({
-                name: "Brighouse Park",
-                address: "7840 Granville Ave",
-                type: "grass"
-            });
-            fields.add({
-                name: "Richmond High Arificial Turf",
-                address: " 7840 Granville Ave",
-                type: "turf"
-            });
-        }
+    <!-- <script>
+        // Add a "fields" collection which has a "Richmond" document which has a "Minoru Park" collection which has corresponding data values
+        db.collection("fields").doc("Richmond").collection("Minoru Park").add({
+            name: "Minoru Park",
+            address: "7191 Granville Ave",
+            type: "grass"
+        })
 
-        writeFields();
-    </script>
+        // Add a "fields" collection which has a "Richmond" document which has a "Brighouse Park" collection which has corresponding data values
+        db.collection("fields").doc("Richmond").collection("Brighouse Park").add({
+            name: "Brighouse Park",
+            address: "7840 Granville Ave",
+            type: "grass"
+        })
+
+        // Add a "fields" collection which has a "Richmond" document which has a "Richmond High" collection which has corresponding data values
+        db.collection("fields").doc("Richmond").collection("Richmond High").add({
+            name: "Richmond High Arificial Turf",
+            address: " 7840 Granville Ave",
+            type: "turf"
+        })
+    </script> -->
+
 
     <script>
         function toHome() { window.location.href = "../1. Home/home.html"; }

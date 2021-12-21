@@ -59,7 +59,7 @@
 
         .icon-label {
             font-size: 7px;
-        } 
+        }
 
         h2 {
             text-align: center;
@@ -88,7 +88,8 @@
                 <img src="../images/dummyImage.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title" id="..">Winona Park</h5>
-                    <p class="card-text">The long, green terraces of Winona Park are popular for a variety of sports. Pleasant seating areas, sheltered by large shade trees, line these open fields.
+                    <p class="card-text">The long, green terraces of Winona Park are popular for a variety of sports.
+                        Pleasant seating areas, sheltered by large shade trees, line these open fields.
                     </p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
@@ -98,7 +99,8 @@
                 <img src="../images/dummyImage.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title" id="...">Trillium Park</h5>
-                    <p class="card-text">Synthetic turf field at the corner of National Ave and Thornton St in Strathcona, just NE of the train station.
+                    <p class="card-text">Synthetic turf field at the corner of National Ave and Thornton St in
+                        Strathcona, just NE of the train station.
                     </p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
@@ -108,7 +110,9 @@
                 <img src="../images/dummyImage.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title" id="...">Jericho Turf</h5>
-                    <p class="card-text"> Jericho Beach Park offers plenty of recreation opportunities during other seasons, from tennis and field sports to bird-watching opportunities, picnic areas and plenty of trails and paths along the water and through the forested areas.
+                    <p class="card-text"> Jericho Beach Park offers plenty of recreation opportunities during other
+                        seasons, from tennis and field sports to bird-watching opportunities, picnic areas and plenty of
+                        trails and paths along the water and through the forested areas.
                     </p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
@@ -118,7 +122,8 @@
                 <img src="../images/dummyImage.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title" id="...">Empire Field</h5>
-                    <p class="card-text"> Empire Field was a temporary Canadian football and soccer stadium built at Hastings Park.
+                    <p class="card-text"> Empire Field was a temporary Canadian football and soccer stadium built at
+                        Hastings Park.
                     </p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
@@ -128,7 +133,8 @@
                 <img src="../images/dummyImage.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title" id="...">Andy Livingstone Field</h5>
-                    <p class="card-text"> Andy Livingstone Park's most prominent feature is a very popular double, lighted, artificial turf playing field.
+                    <p class="card-text"> Andy Livingstone Park's most prominent feature is a very popular double,
+                        lighted, artificial turf playing field.
                     </p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
@@ -138,7 +144,8 @@
                 <img src="../images/dummyImage.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title" id="...">Columbia Park</h5>
-                    <p class="card-text"> Columbia Park is a double grass field situated between Columbia and 43rd, 1 block east of Cambie.
+                    <p class="card-text"> Columbia Park is a double grass field situated between Columbia and 43rd, 1
+                        block east of Cambie.
                     </p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
@@ -163,31 +170,52 @@
     <!--------------------------------------------------->
     <!-- Your Javascript Libraries and scripts go here -->
     <!--------------------------------------------------->
-    <script>
-        function writeFields() {
-            // a variable for the collection you want to create in Firestore (to populate data)
-            var fields = db.collection("fields");
 
-            fields.add({
-                name: "Minoru Park",
-                address: "7191 Granville Ave",
-                type: "grass"
 
-            });
-            fields.add({
-                name: "Brighouse Park",
-                address: "7840 Granville Ave",
-                type: "grass"
-            });
-            fields.add({
-                name: "Richmond High Arificial Turf",
-                address: " 7840 Granville Ave",
-                type: "turf"
-            });
-        }
+    <!-- DO NOT DELETE THIS COMMENTED SECTION-->
+    <!-- <script>
+        // Add a "fields" collection which has a "Vancouver" document which has a "Winona Park" collection which has corresponding data values
+        db.collection("fields").doc("Vancouver").collection("Winona Park").add({
+            name: "Winona Park",
+            address: "7575 Columbia St, Vancouver, BC V5X 2Z1",
+            type: "grass"
+        })
 
-        writeFields();
-    </script>
+        // Add a "fields" collection which has a "Vancouver" document which has a "Trillium Park" collection which has corresponding data values
+        db.collection("fields").doc("Vancouver").collection("Trillium Park").add({
+            name: "Trillium Park",
+            address: "600 National Ave, Vancouver, BC V6A 2E5",
+            type: "turf"
+        })
+
+        // Add a "fields" collection which has a "Vancouver" document which has a "Jericho Turf" collection which has corresponding data values
+        db.collection("fields").doc("Vancouver").collection("Jericho Turf").add({
+            name: "Jericho Turf",
+            address: "1514-1598 Discovery St, Vancouver, BC V6R 4K5",
+            type: "turf"
+        })
+
+        // Add a "fields" collection which has a "Vancouver" document which has a "Empire Field" collection which has corresponding data values
+        db.collection("fields").doc("Vancouver").collection("Empire Field").add({
+            name: "Empire Field",
+            address: "2901 E Hastings St, Vancouver, BC V5K 5J1",
+            type: "turf"
+        })
+
+        // Add a "fields" collection which has a "Vancouver" document which has a "Andy Livingstone Field" collection which has corresponding data values
+        db.collection("fields").doc("Vancouver").collection("Andy Livingstone Field").add({
+            name: "Andy Livingstone Field",
+            address: "98 Keefer St, Vancouver, BC",
+            type: "turf"
+        })
+
+        // Add a "fields" collection which has a "Vancouver" document which has a "Columbia Park" collection which has corresponding data values
+        db.collection("fields").doc("Vancouver").collection("Columbia Park").add({
+            name: "Columbia Park",
+            address: "Columbia Park, 5908 Alberta St, Vancouver, BC V5Y 3M9",
+            type: "grass"
+        })
+    </script> -->
 
     <script>
         function toHome() { window.location.href = "../1. Home/home.html"; }
