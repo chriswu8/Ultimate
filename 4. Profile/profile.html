@@ -60,6 +60,11 @@
     </style>
 
     <style>
+        h2 {
+            text-align: center;
+            padding-top: 10px;
+        }
+
         .accordion {
             background-color: rgb(165, 240, 158);
             border-radius: 10px;
@@ -89,6 +94,62 @@
         }
     </style>
 
+    <style>
+        .displayPicture {
+            background: #5f5050;
+            border-radius: 10px;
+            height: 23vh;
+            width: 75vw;
+            display: grid;
+            grid-template-columns: 8% 18% 6% 9% 23% 5% 23% 8%;
+            grid-template-rows: 18% 12% 10% 5% 10% 12% 16% 17%;
+
+            margin: auto;
+            border: 3px solid #59e2ee;
+            padding: 10px;
+        }
+
+        .picture {
+            border: 1px solid rgb(238, 13, 227);
+            border-radius: 50%;
+            background-image: url("../images/iv. profile/default.png");
+            background-size: 100%;
+            grid-column: 2 / span 2;
+            grid-row: 2 / span 5;
+
+        }
+
+        .plus {
+            grid-column: 3 / span 1;
+            grid-row: 6 / span 1;
+        }
+
+        .name {
+            grid-column: 2 / span 6;
+            grid-row: 7 / span 1;
+        }
+
+        .numFollowers {
+            grid-column: 5 / span 1;
+            grid-row: 3 / span 1;
+        }
+
+        .numFollowing {
+            grid-column: 7 / span 1;
+            grid-row: 3 / span 1;
+        }
+
+        .followers {
+            grid-column: 5 / span 1;
+            grid-row: 5 / span 1;
+        }
+
+        .following {
+            grid-column: 7 / span 1;
+            grid-row: 5 / span 1;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -102,6 +163,18 @@
             <h1>Vancouver Ultimate</h1>
         </div>
     </div>
+    <br>
+
+    <div class="displayPicture">
+        <div class="picture"></div>
+        <div class="plus"></div>
+        <div class="name"></div>
+        <div class="numFollowers"></div>
+        <div class="numFollowing"></div>
+        <div class="followers"></div>
+        <div class="following"></div>
+    </div>
+    <br>
 
     <h2>Personal Information</h2>
 
@@ -128,7 +201,7 @@
         <p>Prior Experience: </p>
         <p>Game Matching Gender: </p>
         <p>Skill Level: </p>
-      
+
     </div>
 
 
