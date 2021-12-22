@@ -98,12 +98,11 @@
         .displayPicture {
             background: #5f5050;
             border-radius: 10px;
-            height: 23vh;
-            width: 75vw;
+            height: 25vh;
+            width: 80vw;
             display: grid;
-            grid-template-columns: 8% 18% 6% 9% 23% 5% 23% 8%;
+            grid-template-columns: 8% 18% 6% 9% 23% 8% 23% 5%;
             grid-template-rows: 18% 12% 10% 5% 10% 12% 16% 17%;
-
             margin: auto;
             border: 3px solid #59e2ee;
             padding: 10px;
@@ -127,26 +126,38 @@
         }
 
         .name {
+            color: white;
+            padding-left: 7px;
             grid-column: 2 / span 6;
             grid-row: 7 / span 1;
         }
 
         .numFollowers {
+            color: white;
+            font-weight: bold;
+            text-align: center;
             grid-column: 5 / span 1;
             grid-row: 3 / span 1;
         }
 
         .numFollowing {
+            color: white;
+            font-weight: bold;
+            text-align: center;
             grid-column: 7 / span 1;
             grid-row: 3 / span 1;
         }
 
         .followers {
+            color: white;
+            text-align: center;
             grid-column: 5 / span 1;
             grid-row: 5 / span 1;
         }
 
         .following {
+            color: white;
+            text-align: center;
             grid-column: 7 / span 1;
             grid-row: 5 / span 1;
         }
@@ -170,11 +181,11 @@
     <div class="displayPicture">
         <div class="picture"></div>
         <div class="plus"></div>
-        <div class="name"></div>
-        <div class="numFollowers"></div>
-        <div class="numFollowing"></div>
-        <div class="followers"></div>
-        <div class="following"></div>
+        <div class="name"> <span id="name-goes-here"></span></div>
+        <div class="numFollowers">1.5M</div>
+        <div class="numFollowing">25</div>
+        <div class="followers">Followers</div>
+        <div class="following">Following</div>
     </div>
     <br>
 
@@ -241,6 +252,22 @@
     <!-- Your Javascript Libraries and scripts go here -->
     <!--------------------------------------------------->
 
+    <script>
+        //function to insert name of the user for a greeting message
+        function read_display_name() {
+            firebase.auth().onAuthStateChanged(user => {
+                // Check if user is signed in:
+                if (user) {
+                    //go to the correct user document by referencing to the user uid
+                    thisUser = db.collection("users").doc(user.uid);
+                    //get the document for current user.
+                    thisUser.get()
+                        .then(userDoc => { document.getElementById("name-goes-here").innerText = userDoc.data().name; })
+                }
+            });
+        }
+        read_display_name();
+    </script>
 
     <script>
         var acc = document.getElementsByClassName("accordion");
