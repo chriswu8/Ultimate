@@ -68,6 +68,7 @@
             text-align: center;
             padding: 20px;
         }
+
         .gd-vpi {
             text-align: center;
         }
@@ -97,8 +98,8 @@
     <p> <b>Address: </b> <span id="address"></span></p>
 
     <div class="gd-vpi">
-        <button type="button" class="btn btn-primary" onclick="toGetDirections">Get directions</button>
-        <button type="button" class="btn btn-primary" onclick="toConfedParkingInfo">View parking info</button>
+        <button type="button" class="btn btn-primary" onclick="toGetDirections()">Get directions</button>
+        <button type="button" class="btn btn-primary" onclick="toConfedParkingInfo()">View parking info</button>
     </div>
     <br><br>
     <h2 class>Gallery</h2>
@@ -361,7 +362,10 @@
         read_display_address();
     </script>
 
-
+    <script>
+        function toGetDirections() { window.location.href = "./burnabyConfedDirections.html"; }
+        function toConfedParkingInfo() { window.location.href = "./burnabyConfedParking.html"; }
+    </script>
 
     <script>
         function toHome() { window.location.href = "../1. Home/home.html"; }
