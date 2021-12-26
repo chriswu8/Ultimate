@@ -1,0 +1,374 @@
+<!--https://www.burnaby.ca/recreation-and-arts/recreation-facilities/sports-fields/sports-field-status-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Confederation Park</title>
+
+    <meta name="Confederation Park" content="Confederation Park">
+
+    <!--Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Google Icons (Material Design)-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Firebase 8 CDNs-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+
+    <!-- Link to the api keys for your firebase project -->
+    <script src="../scripts/firebaseAPI.js"></script>
+
+    <style>
+        html {
+            padding: 0px;
+            margin: 0px;
+            background-color: rgb(190, 190, 190);
+        }
+
+        body {
+            background-color: rgb(190, 190, 190);
+        }
+
+        button {
+            margin: 0.75rem;
+            padding: 0.5rem;
+        }
+    </style>
+
+    <style>
+        h1 {
+            padding-bottom: 2rem;
+        }
+
+        .icon-label {
+            font-size: 7px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            padding: 20px;
+        }
+        .gd-vpi {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!------------------------------------>
+    <!-- Your own HTML layout goes here -->
+    <!------------------------------------>
+
+    <div class="container-fluid bg-dark text-light p-3">
+        <div class="container bg-dark">
+            <h1>Vancouver Ultimate</h1>
+        </div>
+    </div>
+    <br>
+    <h2 class>Confederation Park</h2>
+    <br>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10410.415744841053!2d-123.00982102387879!3d49.28390165292696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548671330dbf7c9b%3A0x17020937e4e14d58!2sConfederation%20Park!5e0!3m2!1sen!2sca!4v1640552741507!5m2!1sen!2sca"
+        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+    <br><br>
+    <p> <b>Address: </b> <span id="address"></span></p>
+
+    <div class="gd-vpi">
+        <button type="button" class="btn btn-primary" onclick="toGetDirections">Get directions</button>
+        <button type="button" class="btn btn-primary" onclick="toConfedParkingInfo">View parking info</button>
+    </div>
+    <br><br>
+    <h2 class>Gallery</h2>
+
+    <section>
+        <style>
+            * {
+                box-sizing: border-box
+            }
+
+            body {
+                font-family: Verdana, sans-serif;
+                margin: 0
+            }
+
+            .mySlides {
+                display: none
+            }
+
+            img {
+                vertical-align: middle;
+            }
+
+            /* Slideshow container */
+            .slideshow-container {
+                max-width: 1000px;
+                position: relative;
+                margin: auto;
+            }
+
+            /* Next & previous buttons */
+            .prev,
+            .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -22px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+
+            /* Position the "next button" to the right */
+            .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover,
+            .next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+            /* Caption text */
+            .text {
+                color: #f2f2f2;
+                font-size: 15px;
+                padding: 8px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 100%;
+                text-align: center;
+            }
+
+            /* Number text (1/3 etc) */
+            .numbertext {
+                color: #f2f2f2;
+                font-size: 12px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+            }
+
+            /* The dots/bullets/indicators */
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+
+            .active,
+            .dot:hover {
+                background-color: #717171;
+            }
+
+            /* Fading animation */
+            .fade {
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.5s;
+                -webkit-animation-fill-mode: forwards;
+                animation-name: fade;
+                animation-duration: 1.5s;
+                animation-fill-mode: forwards;
+            }
+
+            @-webkit-keyframes fade {
+                from {
+                    opacity: .4
+                }
+
+                to {
+                    opacity: 1
+                }
+            }
+
+            @keyframes fade {
+                from {
+                    opacity: .4
+                }
+
+                to {
+                    opacity: 1
+                }
+            }
+
+            /* On smaller screens, decrease text size */
+            @media only screen and (max-width: 300px) {
+
+                .prev,
+                .next,
+                .text {
+                    font-size: 11px
+                }
+            }
+        </style>
+        </head>
+
+        <body>
+
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="../images/ii. fields/confederationPark1.jpg" style="width:100%">
+                    <div class="text">Caption Text</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="../images/ii. fields/confederationPark2.jpg" style="width:100%">
+                    <div class="text">Caption Two</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="../images/ii. fields/confederationPark3.JPG" style="width:100%">
+                    <div class="text">Caption Three</div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            </div>
+            <br>
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+
+            <script>
+                var slideIndex = 1;
+                showSlides(slideIndex);
+
+                function plusSlides(n) {
+                    showSlides(slideIndex += n);
+                }
+
+                function currentSlide(n) {
+                    showSlides(slideIndex = n);
+                }
+
+                function showSlides(n) {
+                    var i;
+                    var slides = document.getElementsByClassName("mySlides");
+                    var dots = document.getElementsByClassName("dot");
+                    if (n > slides.length) { slideIndex = 1 }
+                    if (n < 1) { slideIndex = slides.length }
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex - 1].style.display = "block";
+                    dots[slideIndex - 1].className += " active";
+                }
+            </script>
+
+        </body>
+    </section>
+
+    <br><br><br>
+
+    <footer class="navbar justify-content-evenly fixed-bottom bg-warning">
+
+        <i class="material-icons" onclick="toHome()">home <div class="icon-label">HOME</div></i>
+        <i class="material-icons" onclick="toFields()">place <div class="icon-label">FIELDS</div></i>
+        <i class="material-icons" onclick="toTheory()">article <div class="icon-label">THEORY</div></i>
+        <i class="material-icons" onclick="toProfile()">person <div class="icon-label">PROFILE</div></i>
+
+    </footer>
+
+
+    <!--------------------------------------------------->
+    <!-- Your Javascript Libraries and scripts go here -->
+    <!--------------------------------------------------->
+
+    <!-- DO NOT DELETE THIS COMMENTED SECTION-->
+
+    <!-- <script>
+        // Add a "fields" collection which has a "Burnaby" document which has a "Confederation Park" collection which has corresponding data values
+        db.collection("fields").doc("Burnaby").collection("Confederation Park").add({
+            name: "Confederation Park Soccer Field",
+            address: "204 Alpha Ave, Burnaby, BC V5C 5J9",
+            type: "grass"
+        })
+
+        // Add a "fields" collection which has a "Burnaby" document which has a "Burnaby Lake Sports Complex West" collection which has corresponding data values
+        db.collection("fields").doc("Burnaby").collection("Burnaby Lake Sports Complex West").add({
+            name: "Burnaby Lake Sports Complex West",
+            address: "3677 Kensington Ave, Burnaby, BC V5B 4Z6",
+            type: "turf"
+        })
+
+        // Add a "fields" collection which has a "Burnaby" document which has a "Burnaby North" collection which has corresponding data values
+        db.collection("fields").doc("Burnaby").collection("Burnaby North").add({
+            name: "Burnaby North Secondary School",
+            address: "751 Hammarskjold Dr, Burnaby, BC V5B 4A1",
+            type: "turf"
+        })
+    </script>  -->
+
+    <script>
+        //function to insert the address of the field
+        function read_display_address() {
+            firebase.auth().onAuthStateChanged(user => {
+                // Check if user is signed in:
+                if (user) {
+                    //go to the correct document 
+                    thisUser = db.collection("fields").doc("Burnaby").collection("Confederation Park").doc("3Qwsq4WLxwb7NY9c8P88");
+                    //get the document for current user.
+                    thisUser.get()
+                        .then(userDoc => { document.getElementById("address").innerText = userDoc.data().address; })
+                }
+            });
+        }
+        read_display_address();
+    </script>
+
+
+
+    <script>
+        function toHome() { window.location.href = "../1. Home/home.html"; }
+        function toFields() { window.location.href = "../2. Fields/cityList.html"; }
+        function toTheory() { window.location.href = "../3. Theory/categories.html"; }
+        function toProfile() { window.location.href = "../4. Profile/profile.html"; }
+    </script>
+</body>
+
+</html>
